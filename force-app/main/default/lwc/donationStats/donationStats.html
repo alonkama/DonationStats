@@ -1,0 +1,31 @@
+<template>
+    <div class="c-container">
+        <template if:true={largestDonationDate}>
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 1">Largest Donation Date</p>
+                    <p><lightning-formatted-date-time value={largestDonationDate}></lightning-formatted-date-time></p>
+                </div>
+            </lightning-layout-item>
+        </template>
+        <template if:true={lastDonationAmount}>
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 2">Last Donation Amount</p>
+                    <p><lightning-formatted-number value={lastDonationAmount} format-style="currency" currency-code="USD"></lightning-formatted-number></p>            
+                </div>
+            </lightning-layout-item>
+        </template>
+        <template if:true={firstDonationAmount}>       
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <p class="field-title" title="Field 3">First Donation Amount</p>
+                    <p><lightning-formatted-number value={firstDonationAmount} format-style="currency" currency-code="USD"></lightning-formatted-number></p>            
+                </div>
+            </lightning-layout-item>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+    </div>
+</template>
